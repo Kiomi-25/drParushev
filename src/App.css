@@ -1,0 +1,7 @@
+:root {
+  --header-height: 5rem; /* 80px = 5rem */
+}
+
+main {
+  padding-top: var(--header-height);
+}
