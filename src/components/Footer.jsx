@@ -1,12 +1,14 @@
 import LOGO from "../assets/LOGO.svg";
+import { useLanguage } from "../context/LanguageContext";
 
 export const Footer = () => {
+  const { translations } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-gray-900 text-gray-300">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-8 py-12">
+      <div className="max-w-6xl mx-auto px-8 py-12">
         <div className="grid md:grid-cols-3 gap-12">
           {/* Column 1 - Logo and About */}
           <div>
@@ -18,16 +20,15 @@ export const Footer = () => {
               />
               <div className="text-center">
                 <div className="text-lg font-bold text-white uppercase tracking-wide">
-                  Дентална Практика
+                {translations.footerLogoTitle}
                 </div>
                 <div className="text-base font-semibold text-[#00A79D] italic -mt-1">
-                  Д-р Парушев
+                {translations.footerLogoSubtitle}
                 </div>
               </div>
             </a>
             <p className="text-sm leading-relaxed">
-              Съвременна дентална грижа с индивидуален подход. Специализирани
-              услуги в ендодонтия, естетични реставрации и алайнери.
+            {translations.footerDescription}
             </p>
           </div>
 
@@ -47,7 +48,9 @@ export const Footer = () => {
                   />
                 </svg>
                 <div className="text-sm">
-                  <p className="font-semibold text-white mb-1">Адрес:</p>
+                  <p className="font-semibold text-white mb-1">
+                    {translations.footerAddressLabel}
+                  </p>
                   <p>гр. София, 1606</p>
                   <p>Петте Кьошета, ул. "Доспат" 14</p>
                 </div>
@@ -62,7 +65,7 @@ export const Footer = () => {
                 <a
                   href="tel:+359899187641"
                   className="text-sm hover:text-[#00A79D] transition-colors">
-                  0899187641
+                  +359 899187641
                 </a>
               </li>
               <li className="flex items-center">
@@ -84,60 +87,40 @@ export const Footer = () => {
 
           {/* Column 3 - Working Hours & Quick Links */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">Работно време</h3>
+            <h3 className="text-white font-bold text-lg mb-4">
+              {translations.footerWorkingHoursTitle}
+            </h3>
             <ul className="space-y-2 text-sm mb-6">
               <li className="flex justify-between">
-                <span>Понеделник и Четвъртък:</span>
+                <span>{translations.footerMonThu}</span>
                 <span className="text-white font-semibold">8:30 - 16:00</span>
               </li>
               <li className="flex justify-between">
-                <span>Вторник и Сряда:</span>
+                <span>{translations.footerTueWed}</span>
                 <span className="text-white font-semibold">11:00 - 18:30</span>
               </li>
               <li className="flex justify-between">
-                <span>Петък - Неделя:</span>
-                <span className="text-white font-semibold">Почивни дни</span>
+                <span>{translations.footerFriSun}</span>
+                <span className="text-white font-semibold">
+                  {translations.footerClosedDays}
+                </span>
               </li>
             </ul>
 
             {/* Quick Links */}
-            <h3 className="text-white font-bold text-lg mb-4">Бързи връзки</h3>
+            <h3 className="text-white font-bold text-lg mb-4">
+              {translations.footerQuickLinksTitle}
+            </h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href="#about"
-                  className="hover:text-[#00A79D] transition-colors">
-                  За мен
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-[#00A79D] transition-colors">
-                  Услуги
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#prices"
-                  className="hover:text-[#00A79D] transition-colors">
-                  Цени
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#cases"
-                  className="hover:text-[#00A79D] transition-colors">
-                  Случаи
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contacts"
-                  className="hover:text-[#00A79D] transition-colors">
-                  Контакти
-                </a>
-              </li>
+              {translations.footerQuickLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className="hover:text-[#00A79D] transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -145,7 +128,7 @@ export const Footer = () => {
         {/* Social Media Links */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm">Последвайте ни:</p>
+            <p className="text-sm">{translations.footerFollowUs}</p>
             <div className="flex gap-4">
               <a
                 href="#"
@@ -179,15 +162,14 @@ export const Footer = () => {
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-gray-400">
             <p>
-              © {currentYear} Дентална практика Д-р Парушев. Всички права
-              запазени.
+              © {currentYear} {translations.footerCopyright}
             </p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-[#00A79D] transition-colors">
-                Политика за поверителност
+                {translations.footerPrivacyPolicy}
               </a>
               <a href="#" className="hover:text-[#00A79D] transition-colors">
-                Общи условия
+                {translations.footerTerms}
               </a>
             </div>
           </div>

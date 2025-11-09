@@ -4,4 +4,9 @@
 
 main {
   padding-top: var(--header-height);
+  
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* Adjust this value based on your header height */
 }
