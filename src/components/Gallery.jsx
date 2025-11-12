@@ -10,7 +10,6 @@ export const Gallery = () => {
   const { translations } = useLanguage();
   const slides = [Gallery1, Gallery2, Gallery3, Gallery4, Gallery5];
 
-
   return (
     <section id="gallery" className="py-20 px-8 bg-white">
       <div className="max-w-5xl mx-auto">
@@ -28,32 +27,18 @@ export const Gallery = () => {
         </div>
 
         {/* Carousel Container - Centered */}
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <Carousel>
             {slides.map((s, index) => (
-              <img
-                key={index}
-                src={s}
-                alt={`${translations.galleryAlt} ${index + 1}`}
-                className="w-full h-[400px] md:h-[600px] object-cover"
-              />
+              <div key={index} className="min-w-full flex-shrink-0">
+                <img
+                  src={s}
+                  alt={`${translations.galleryAlt} ${index + 1}`}
+                  className="w-full h-auto max-h-[400px] md:max-h-[500px] object-contain"
+                />
+              </div>
             ))}
           </Carousel>
-        </div>
-
-       {/* Optional: Grid Preview Below Carousel */}
-       <div className="mt-12 grid grid-cols-3 md:grid-cols-6 gap-4 max-w-5xl mx-auto">
-          {slides.map((s, index) => (
-            <div
-              key={index}
-              className="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer">
-              <img
-                src={s}
-                alt={`${translations.thumbnailAlt} ${index + 1}`}
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-          ))}
         </div>
       </div>
     </section>

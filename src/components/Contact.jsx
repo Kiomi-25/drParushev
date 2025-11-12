@@ -1,15 +1,14 @@
 import { useLanguage } from "../context/LanguageContext";
 
-
 export const Contact = () => {
   const { translations } = useLanguage();
   return (
     <section id="contacts" className="py-20 px-8 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold text-[#02A69C] mb-4">
-          {translations.contactTitle}
+            {translations.contactTitle}
           </h2>
         </div>
 
@@ -59,14 +58,12 @@ export const Contact = () => {
                 </span>
               </a>
             </div>
-
-            
           </div>
 
           {/* Right Side - Map */}
           <div className="h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg">
             <iframe
-               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.0945744799406!2d23.308799776544947!3d42.68868917116633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa85f700ae0fcb%3A0x979f6db912841efb!2sDental%20practice%20Dr.%20Parushev!5e0!3m2!1sen!2sbg!4v1731167890123!5m2!1sen!2sbg"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.0945744799406!2d23.308799776544947!3d42.68868917116633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa85f700ae0fcb%3A0x979f6db912841efb!2sDental%20practice%20Dr.%20Parushev!5e0!3m2!1sen!2sbg!4v1731167890123!5m2!1sen!2sbg"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -76,8 +73,6 @@ export const Contact = () => {
               title="Дентална практика Д-р Парушев"></iframe>
           </div>
         </div>
-
-        
       </div>
     </section>
   );

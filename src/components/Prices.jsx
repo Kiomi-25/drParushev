@@ -1,11 +1,10 @@
 import LOGO from "../assets/LOGO.svg";
 import { useLanguage } from "../context/LanguageContext";
 
-
 export const Prices = () => {
   const { translations } = useLanguage();
-    return (
-      <section
+  return (
+    <section
       id="prices"
       className="py-20 px-8 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
@@ -19,13 +18,13 @@ export const Prices = () => {
           </p>
         </div>
 
-
         {/* Price Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
           {translations.priceCards.map((card, index) => (
-            <div
+            <a
               key={index}
-              className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${
+              href="#book"
+              className={`block bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:scale-105 cursor-pointer ${
                 index === 1
                   ? "border-3 border-[#014d7f] relative"
                   : "border border-gray-100"
@@ -37,8 +36,8 @@ export const Prices = () => {
                 </div>
               )}
 
-          {/* Card Header */}
-          <div className="border-b border-gray-200 p-6">
+              {/* Card Header */}
+              <div className="border-b border-gray-200 p-6">
                 <div className="flex items-center justify-between">
                   <h3 className="text-2xl font-bold text-gray-800">
                     {card.title}
@@ -53,9 +52,9 @@ export const Prices = () => {
                 </div>
               </div>
 
-          {/* Card Body */}
-          <div className="p-8">
-          <div className="flex items-baseline justify-center mb-4">
+              {/* Card Body */}
+              <div className="p-8">
+                <div className="flex items-baseline justify-center mb-4">
                   <span className="text-5xl font-bold text-gray-800">
                     {card.price}
                   </span>
@@ -71,22 +70,22 @@ export const Prices = () => {
                         fill="currentColor"
                         viewBox="0 0 20 20">
                         <path
-                         fillRule="evenodd"
-                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                         clipRule="evenodd"
-                       />
-                     </svg>
-                     <span>{feature}</span>
-                   </li>
-                 ))}
-               </ul>
-             </div>
-           </div>
-         ))}
-       </div>
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </a>
+          ))}
+        </div>
 
-{/* Important Note */}
-<div className="max-w-3xl mx-auto">
+        {/* Important Note */}
+        <div className="max-w-3xl mx-auto">
           <div className="bg-blue-50 border-l-4 border-[#0071BB] p-6 rounded-lg">
             <div className="flex items-start">
               <svg
@@ -111,16 +110,15 @@ export const Prices = () => {
           </div>
         </div>
 
-{/* CTA Button */}
-<div className="text-center mt-12">
+        {/* CTA Button */}
+        <div className="text-center mt-12">
           <a
-          href="#book"
-          className="inline-block px-10 py-4 bg-[#0071BB] text-white font-semibold rounded-lg hover:bg-[#005a99] transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
-          {translations.ctaButton}
-        </a>
+            href="#book"
+            className="inline-block px-10 py-4 bg-[#0071BB] text-white font-semibold rounded-lg hover:bg-[#005a99] transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+            {translations.ctaButton}
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
 };
-

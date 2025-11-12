@@ -7,40 +7,36 @@ import Teeth6 from "../assets/teeth6.svg";
 import Teeth7 from "../assets/teeth7.svg";
 import { useLanguage } from "../context/LanguageContext";
 
-
 export const Services = () => {
   const { translations } = useLanguage();
 
   const teethImages = [Teeth1, Teeth2, Teeth3, Teeth4, Teeth5, Teeth6, Teeth7];
 
-
-    return (
+  return (
     <section id="services" className="py-20 px-8 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-[#02A69C] mb-12 text-center">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-4xl font-bold text-[#02A69C] mb-12 text-center">
           {translations.servicesTitle}
-          </h2>
-         
-          <div className="grid md:grid-cols-3 gap-8">
+        </h2>
+
+        <div className="flex flex-col items-center gap-8 md:grid md:grid-cols-3 md:items-stretch">
           {translations.services.map((service, index) => (
-            <div 
+            <div
               key={index}
-              className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-            >
+              className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full max-w-sm">
               <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
               <div className="text-5xl mb-4">
-                <img 
-                  src={teethImages[index]} 
-                  alt={service.title} 
-                  className="rounded-lg" 
+                <img
+                  src={teethImages[index]}
+                  alt={service.title}
+                  className="rounded-lg"
                 />
               </div>
               <p className="text-gray-600">{service.description}</p>
             </div>
           ))}
         </div>
-        
-        </div>
-      </section>
-)
-}
+      </div>
+    </section>
+  );
+};
