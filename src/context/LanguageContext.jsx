@@ -40,11 +40,15 @@ export const LanguageProvider = ({ children }) => {
       // About section translations
       aboutTitle: "За мен",
       aboutParagraph1:
-        "Завърших средното си образование завърших в Испанската гимназия в София. Дипломирах се през 2016 с магистърска степен по дентална медицина в София.",
+        "Завърших Испанската гимназия в София, а през 2016 г. Факултета по дентална медицина. Оттогава стоматологията е не просто професия за мен, а място, където мога да помагам на хората да се усмихват уверено.",
       aboutParagraph2:
-        "Интересите ми са насочени в областта на ендодонтията, естетични реставрации и алайнери. Посещавам множество квалификационни курсове в България и чужбина, по този начин се стремя да следя тенденциите в денталната медицина и да ги прилагам в практиката си.",
+        "Най-голям интерес имам към ендодонтията, естетичните възстановявания и алайнерите. Следя новостите в денталната медицина и редовно посещавам курсове в България и чужбина. Вярвам, че така мога да предложа на пациентите си най-доброто от съвременната стоматология.",
       aboutParagraph3:
-        "От 2016 до 2018 работих в дентална практика в Люлин. В края на 2018 година стартирах своя собствена, която ръководя от тогава. Интересите ми извън стоматологията са свързани с планински преходи.",
+        "През 2018 г. създадох своя собствена практика – място, в което се старая всеки пациент да се чувства спокоен, разбран и добре обгрижен.",
+      aboutParagraph4:
+        "Извън работата най-често ще ме намерите сред природата – на планински преход или на бягане в парка. Отскоро участвам и в маратони, които ми дават нови цели и много положителна емоция. ",
+      aboutParagraph5:
+        "Обожавам и Испания – нейната култура, атмосфера и кухня, а разходките из различните ѝ региони са сред най-големите ми малки радости.",
 
       // Services section translations
       servicesTitle: "Услуги",
@@ -82,26 +86,54 @@ export const LanguageProvider = ({ children }) => {
       // Prices section translations
       pricesTitle: "Ценова листа",
       pricesSubtitle: "Прозрачни и достъпни цени за качествена дентална грижа",
-      currency: "лв",
+      currencylb: "лв",
+      currencyEu: "€",
       popularBadge: "ПОПУЛЯРЕН",
 
       priceCards: [
         {
           title: "Преглед",
-          price: "60",
+          price: "68,45",
+          priceEu: "35",
           features: [
-            "Пълен стоматологичен преглед",
-            "Консултация",
-            "Оценка на състоянието",
+            "Обстоен преглед",
+            "Обсъждане на конкретен проблем, поради който е записан часът",
           ],
         },
         {
           title: "Преглед и лечебен план",
-          price: "80",
+          price: "97,79",
+          priceEu: "50",
           features: [
-            "Всичко от базовия преглед",
-            "Детайлен лечебен план",
-            "Посочени цени за манипулации",
+            "Обстоен преглед",
+            "Фото документация",
+            "Рентгенови снимки",
+            "Анализ на фото документация и рентгенови снимки",
+            "Изготвяне на поетапен план на лечение и финансов план",
+            "Обсъждане",
+          ],
+        },
+        {
+          title: "Профилактика",
+          price: "273,82",
+          priceEu: "140",
+          features: [
+            "Две посещения годишно с цел редовна грижа за Вашето пародонтално здраве (зъби и венци)",
+            "Два периодични профилактични прегледа на всеки 6 месеца",
+            "Две процедури за провеждане на професионална клинична орална хигиена, почистване на зъбен камък и плака с ултразвук и Airflow",
+            "*Еднично посещение за почистване на зъбен камък, веднъж годишно или на по-голям интервал от 6 месеца 156,47 лв / 80€",
+          ],
+        },
+        {
+          title: "Избелване",
+          price: "684,54",
+          priceEu: "350",
+          features: [
+            "Обстоен преглед и запознаване с процедурата по избелване на Вашите зъби",
+            "Професионално почистване",
+            "Избелване в едно посещение (офис избелване)",
+            "Изготвяне на индивидуални шини и комплект за избелване в домашни условия (домашно избелване)",
+            "Оценка, насоки и съвети за поддържане на постигнатия резултат",
           ],
         },
       ],
@@ -120,6 +152,13 @@ export const LanguageProvider = ({ children }) => {
       casesCtaButton: "Запазете консултация",
       casesBefore: "Преди",
       casesAfter: "След",
+      caseDescription: [
+        "Лечение на вторичен кариес",
+        "Избелване",
+        "Избелване",
+        "Лечение на пулпит",
+        "Лечение на силно разрушен зъб с LiSi overlay",
+      ],
 
       // Gallery section translations
       gallerySubheading: "Нашата клиника",
@@ -141,7 +180,8 @@ export const LanguageProvider = ({ children }) => {
       bookingSubtitle:
         "Попълнете формата и ние ще се свържем с Вас възможно най-скоро",
       bookingWorkingHours: "Работно време:",
-      bookingMonFri: "Понеделник - Петък:",
+      bookingMonWenFri: "Понеделник, Сряда и Петък",
+      bookingTueThu: "Вторник и четвъртък:",
       bookingSaturday: "Събота:",
       bookingSunday: "Неделя:",
       bookingSaturdayTime: "По договаряне",
@@ -165,10 +205,12 @@ export const LanguageProvider = ({ children }) => {
         "Съвременна дентална грижа с индивидуален подход. Специализирани услуги в ендодонтия, естетични реставрации и алайнери.",
       footerContactsTitle: "Контакти",
       footerAddressLabel: "Адрес:",
+      footerAddress: 'гр. София, 1606,\nПетте Кьошета, ул. "Доспат" 14',
       footerWorkingHoursTitle: "Работно време",
-      footerMonThu: "Понеделник и Четвъртък:",
-      footerTueWed: "Вторник и Сряда:",
-      footerFriSun: "Петък - Неделя:",
+      footerMonThu: "Понеделник, Сряда и Петък",
+      footerTueWed: "Вторник и четвъртък:",
+      footerSat: "Събота:",
+      footerSun: "Неделя:",
       footerClosedDays: "Почивни дни",
       footerQuickLinksTitle: "Бързи връзки",
       footerQuickLinks: [
@@ -206,11 +248,15 @@ export const LanguageProvider = ({ children }) => {
       // About section translations
       aboutTitle: "About Me",
       aboutParagraph1:
-        "I completed my secondary education at the Spanish High School in Sofia. I graduated in 2016 with a master's degree in dental medicine in Sofia.",
+        "I graduated from the Spanish High School in Sofia, and in 2016 from the Faculty of Dental Medicine. Since then, dentistry has been more than just a profession for me, it's a place where I can help people smile confidently.",
       aboutParagraph2:
-        "My interests are focused in the field of endodontics, aesthetic restorations and aligners. I attend numerous qualification courses in Bulgaria and abroad, thus striving to follow the trends in dental medicine and apply them in my practice.",
+        "My interests are focused in the field of endodontics, aesthetic restorations, and aligners. I keep up with developments in dental medicine and regularly attend courses in Bulgaria and abroad. I believe this allows me to offer my patients the best of modern dentistry.",
       aboutParagraph3:
-        "From 2016 to 2018 I worked in a dental practice in Lyulin. At the end of 2018, I started my own practice, which I have been managing since then. My interests outside of dentistry are related to mountain hiking.",
+        "In 2018, I created my own practice, a place where I strive to make every patient feel calm, understood, and well cared for.",
+      aboutParagraph4:
+        "Outside of work, you'll most often find me in nature, on a mountain hike or running in the park. Recently, I've also been participating in marathons, which give me new goals and a lot of positive energy.",
+      aboutParagraph5:
+        "I also love Spain, its culture, atmosphere, and cuisine, and walks through its different regions are among my greatest small joys.",
 
       // Services section translations
       servicesTitle: "Services",
@@ -250,26 +296,54 @@ export const LanguageProvider = ({ children }) => {
       pricesTitle: "Price List",
       pricesSubtitle:
         "Transparent and affordable prices for quality dental care",
-      currency: "BGN",
+      currencylb: "BGN",
+      currencyEu: "€",
       popularBadge: "POPULAR",
 
       priceCards: [
         {
           title: "Examination",
-          price: "60",
+          price: "68.45",
+          priceEu: "35",
           features: [
-            "Full dental examination",
-            "Consultation",
-            "Condition assessment",
+            "Comprehensive examination",
+            "Discussion of a specific problem for which the appointment was made",
           ],
         },
         {
           title: "Examination & Treatment Plan",
-          price: "80",
+          price: "97.79",
+          priceEu: "50",
           features: [
-            "Everything from basic examination",
-            "Detailed treatment plan",
-            "Specified prices for procedures",
+            "Comprehensive examination",
+            "Photo documentation",
+            "X-rays",
+            "Analysis of photo documentation and X-rays",
+            "Preparation of a step-by-step treatment plan and financial plan",
+            "Discussion",
+          ],
+        },
+        {
+          title: "Prevention",
+          price: "273,82",
+          priceEu: "140",
+          features: [
+            "Two visits per year for regular care of your periodontal health (teeth and gums)",
+            "Two periodic preventive examinations every 6 months",
+            "Two procedures for conducting professional clinical oral hygiene, cleaning of tartar and plaque with ultrasound and Airflow",
+            "*Single visit for tartar cleaning, once a year or at a greater interval of 6 months 156.47 lv / 80 €",
+          ],
+        },
+        {
+          title: "Whitening",
+          price: "684,54",
+          priceEu: "350",
+          features: [
+            "A comprehensive examination and introduction to the procedure for whitening your teeth",
+            "Professional cleaning",
+            "Whitening in one visit (office whitening)",
+            "Preparation of individual trays and a whitening kit at home (home whitening)",
+            "Assessment, guidelines and tips for maintaining the achieved result",
           ],
         },
       ],
@@ -287,6 +361,13 @@ export const LanguageProvider = ({ children }) => {
       casesCtaButton: "Book a Consultation",
       casesBefore: "Before",
       casesAfter: "After",
+      caseDescription: [
+        "Treatment of secondary caries",
+        "Whitening",
+        "Whitening",
+        "Treatment of pulpitis",
+        "Treatment of severely decayed tooth with LiSi overlay",
+      ],
 
       // Gallery section translations
       gallerySubheading: "Our Clinic",
@@ -307,7 +388,8 @@ export const LanguageProvider = ({ children }) => {
       bookingSubtitle:
         "Fill out the form and we will contact you as soon as possible",
       bookingWorkingHours: "Working Hours:",
-      bookingMonFri: "Monday - Friday:",
+      bookingMonWenFri: "Monday, Wednesday and Friday:",
+      bookingTueThu: "Tuesday and Thursday:",
       bookingSaturday: "Saturday:",
       bookingSunday: "Sunday:",
       bookingSaturdayTime: "By appointment",
@@ -331,10 +413,12 @@ export const LanguageProvider = ({ children }) => {
         "Modern dental care with an individual approach. Specialized services in endodontics, aesthetic restorations and aligners.",
       footerContactsTitle: "Contacts",
       footerAddressLabel: "Address:",
+      footerAddress: 'Sofia, 1606,\nPette Kyosheta, "Dospat" str. 14',
       footerWorkingHoursTitle: "Working Hours",
-      footerMonThu: "Monday and Thursday:",
-      footerTueWed: "Tuesday and Wednesday:",
-      footerFriSun: "Friday - Sunday:",
+      footerMonThu: "Monday, Wednesday and Friday:",
+      footerTueWed: "Tuesday and Thursday:",
+      footerSat: "Saturday:",
+      footerSun: "Sunday:",
       footerClosedDays: "Closed",
       footerQuickLinksTitle: "Quick Links",
       footerQuickLinks: [

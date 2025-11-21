@@ -29,7 +29,7 @@ export const Contact = () => {
             {/* Phone */}
             <div>
               <a
-                href="tel:+359899187641"
+                href="tel:+359883436615"
                 className="text-lg text-gray-700 hover:text-[#0071BB] transition-colors inline-flex items-center group">
                 <svg
                   className="w-5 h-5 mr-2 text-[#00A79D]"
@@ -37,14 +37,14 @@ export const Contact = () => {
                   viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                <span className="group-hover:underline">+359 899187641</span>
+                <span className="group-hover:underline">+359 883436615</span>
               </a>
             </div>
 
             {/* Email */}
             <div>
               <a
-                href="mailto:info@drparushev.bg"
+                href="mailto:parushev.dimiter@gmail.com"
                 className="text-lg text-gray-700 hover:text-[#0071BB] transition-colors inline-flex items-center group">
                 <svg
                   className="w-5 h-5 mr-2 text-[#00A79D]"
@@ -54,7 +54,7 @@ export const Contact = () => {
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
                 <span className="group-hover:underline">
-                  info@drparushev.bg
+                  parushev.dimiter@gmail.com
                 </span>
               </a>
             </div>

@@ -17,11 +17,31 @@ export const Cases = () => {
 
   // Group images into before/after pairs
   const cases = [
-    { before: Case1a, after: Case1b },
-    { before: Case2a, after: Case2b },
-    { before: Case3a, after: Case3b },
-    { before: Case5a, after: Case5b },
-    { before: Case6a, after: Case6b },
+    {
+      before: Case1a,
+      after: Case1b,
+      description: translations.caseDescription[0],
+    },
+    {
+      before: Case2a,
+      after: Case2b,
+      description: translations.caseDescription[1],
+    },
+    {
+      before: Case3a,
+      after: Case3b,
+      description: translations.caseDescription[2],
+    },
+    {
+      before: Case5a,
+      after: Case5b,
+      description: translations.caseDescription[3],
+    },
+    {
+      before: Case6a,
+      after: Case6b,
+      description: translations.caseDescription[4],
+    },
   ];
 
   // Debug: Check if images are loaded
@@ -50,29 +70,39 @@ export const Cases = () => {
             {cases.map((caseItem, index) => (
               <div
                 key={index}
-                className="min-w-full px-4 flex items-center min-h-[400px] md:min-h-[500px]">
-                <div className="w-full grid md:grid-cols-2 gap-4 md:gap-8 items-center">
-                  {/* Before Image */}
-                  <div className="relative flex items-center justify-center">
-                    <img
-                      src={caseItem.before}
-                      alt={`${translations.caseAlt} ${index + 1} - преди`}
-                      className="w-full h-auto object-cover rounded-lg shadow-md"
-                    />
-                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-gray-800/80 text-white px-4 py-2 rounded-full font-semibold text-sm">
-                      {translations.casesBefore}
-                    </div>
+                className="min-w-full px-4 flex items-center min-h-[500px] md:min-h-[600px]">
+                <div className="w-full">
+                  {/* Case Description */}
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl md:text-2xl font-semibold text-gray-600">
+                      {caseItem.description}
+                    </h3>
                   </div>
 
-                  {/* After Image */}
-                  <div className="relative flex items-center justify-center">
-                    <img
-                      src={caseItem.after}
-                      alt={`${translations.caseAlt} ${index + 1} - след`}
-                      className="w-full h-auto object-cover rounded-lg shadow-md"
-                    />
-                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-gray-800/80 text-white px-4 py-2 rounded-full font-semibold text-sm">
-                      {translations.casesAfter}
+                  {/* Images Grid */}
+                  <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-center">
+                    {/* Before Image */}
+                    <div className="relative flex items-center justify-center">
+                      <img
+                        src={caseItem.before}
+                        alt={`${translations.caseAlt} ${index + 1} - преди`}
+                        className="w-full h-auto object-cover rounded-lg shadow-md"
+                      />
+                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-gray-800/80 text-white px-4 py-2 rounded-full font-semibold text-sm">
+                        {translations.casesBefore}
+                      </div>
+                    </div>
+
+                    {/* After Image */}
+                    <div className="relative flex items-center justify-center">
+                      <img
+                        src={caseItem.after}
+                        alt={`${translations.caseAlt} ${index + 1} - след`}
+                        className="w-full h-auto object-cover rounded-lg shadow-md"
+                      />
+                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-gray-800/80 text-white px-4 py-2 rounded-full font-semibold text-sm">
+                        {translations.casesAfter}
+                      </div>
                     </div>
                   </div>
                 </div>

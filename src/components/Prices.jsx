@@ -1,8 +1,13 @@
-import LOGO from "../assets/LOGO.svg";
+import LOGO from "../assets/prices/LOGO.svg";
+import Popular from "../assets/prices/Popular.svg";
+import Prevention from "../assets/prices/Prevention.svg";
+import Whitening from "../assets/prices/whitening.svg";
+
 import { useLanguage } from "../context/LanguageContext";
 
 export const Prices = () => {
   const { translations } = useLanguage();
+  const cardImages = [LOGO, Popular, Prevention, Whitening];
   return (
     <section
       id="prices"
@@ -31,7 +36,7 @@ export const Prices = () => {
               }`}>
               {/* Popular Badge (only for second card) */}
               {index === 1 && (
-                <div className="absolute top-4 right-4 bg-[#014d7f] text-white text-xs font-bold px-3 py-1 rounded-full">
+                <div className="hidden sm:block absolute top-4 right-4 bg-[#014d7f] text-white text-xs font-bold px-3 py-1 rounded-full">
                   {translations.popularBadge}
                 </div>
               )}
@@ -39,12 +44,12 @@ export const Prices = () => {
               {/* Card Header */}
               <div className="border-b border-gray-200 p-6">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-gray-800">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-800">
                     {card.title}
                   </h3>
-                  <div className="w-14 h-14">
+                  <div className="hidden sm:block w-16 h-16">
                     <img
-                      src={LOGO}
+                      src={cardImages[index]}
                       alt="Dental Practice Logo"
                       className="w-full h-full object-contain transform transition-transform hover:scale-105"
                     />
@@ -52,30 +57,60 @@ export const Prices = () => {
                 </div>
               </div>
 
-              {/* Card Body */}
               <div className="p-8">
-                <div className="flex items-baseline justify-center mb-4">
-                  <span className="text-5xl font-bold text-gray-800">
-                    {card.price}
+                <div className="flex flex-col sm:flex-row items-center sm:items-baseline justify-center mb-4 gap-2 sm:gap-0">
+                  {/* First row: BGN price */}
+                  <div className="flex items-baseline">
+                    <span className="text-2xl sm:text-4xl font-bold text-gray-800">
+                      {card.price}
+                    </span>
+                    <span className="text-2xl sm:text-2xl font-semibold text-gray-600 ml-2">
+                      {translations.currencylb}
+                    </span>
+                  </div>
+
+                  {/* Second row: Separator */}
+                  <span className="text-2xl sm:text-3xl font-semibold text-gray-800 sm:mx-3">
+                    /
                   </span>
-                  <span className="text-2xl font-semibold text-gray-600 ml-2">
-                    {translations.currency}
-                  </span>
+
+                  {/* Third row: EUR price */}
+                  <div className="flex items-baseline">
+                    <span className="text-2xl sm:text-4xl font-bold text-gray-800">
+                      {card.priceEu}
+                    </span>
+                    <span className="text-xl sm:text-2xl font-semibold text-gray-600 ml-2">
+                      {translations.currencyEu}
+                    </span>
+                  </div>
                 </div>
                 <ul className="space-y-3 text-gray-600">
                   {card.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <svg
-                        className="w-5 h-5 text-[#00A79D] mr-2 mt-0.5 flex-shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span>{feature}</span>
+                      {feature.startsWith("*") ? (
+                        <span className="text-red-700  font-bold text-2xl mr-2 flex-shrink-0">
+                          *
+                        </span>
+                      ) : (
+                        <svg
+                          className="w-5 h-5 text-[#00A79D] mr-2 mt-0.5 flex-shrink-0"
+                          fill="currentColor"
+                          viewBox="0 0 20 20">
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      )}
+                      <span
+                        className={
+                          feature.startsWith("*") ? "text-red-700" : ""
+                        }>
+                        {feature.startsWith("*")
+                          ? feature.substring(1)
+                          : feature}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -83,7 +118,6 @@ export const Prices = () => {
             </a>
           ))}
         </div>
-
         {/* Important Note */}
         <div className="max-w-3xl mx-auto">
           <div className="bg-blue-50 border-l-4 border-[#0071BB] p-6 rounded-lg">

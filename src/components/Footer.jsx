@@ -20,15 +20,15 @@ export const Footer = () => {
               />
               <div className="text-center">
                 <div className="text-lg font-bold text-white uppercase tracking-wide">
-                {translations.footerLogoTitle}
+                  {translations.footerLogoTitle}
                 </div>
                 <div className="text-base font-semibold text-[#00A79D] italic -mt-1">
-                {translations.footerLogoSubtitle}
+                  {translations.footerLogoSubtitle}
                 </div>
               </div>
             </a>
             <p className="text-sm leading-relaxed">
-            {translations.footerDescription}
+              {translations.footerDescription}
             </p>
           </div>
 
@@ -51,8 +51,7 @@ export const Footer = () => {
                   <p className="font-semibold text-white mb-1">
                     {translations.footerAddressLabel}
                   </p>
-                  <p>гр. София, 1606</p>
-                  <p>Петте Кьошета, ул. "Доспат" 14</p>
+                  <p>{translations.footerAddress}</p>
                 </div>
               </li>
               <li className="flex items-center">
@@ -63,9 +62,9 @@ export const Footer = () => {
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
                 <a
-                  href="tel:+359899187641"
+                  href="tel:+359883436615"
                   className="text-sm hover:text-[#00A79D] transition-colors">
-                  +359 899187641
+                  +359 883436615
                 </a>
               </li>
               <li className="flex items-center">
@@ -77,9 +76,9 @@ export const Footer = () => {
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
                 <a
-                  href="mailto:info@drparushev.bg"
+                  href="mailto:parushev.dimiter@gmail.com"
                   className="text-sm hover:text-[#00A79D] transition-colors">
-                  info@drparushev.bg
+                  parushev.dimiter@gmail.com
                 </a>
               </li>
             </ul>
@@ -93,14 +92,18 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm mb-6">
               <li className="flex justify-between">
                 <span>{translations.footerMonThu}</span>
-                <span className="text-white font-semibold">8:30 - 16:00</span>
+                <span className="text-white font-semibold">14:00-19:30</span>
               </li>
               <li className="flex justify-between">
                 <span>{translations.footerTueWed}</span>
-                <span className="text-white font-semibold">11:00 - 18:30</span>
+                <span className="text-white font-semibold">08:00-13:00</span>
               </li>
               <li className="flex justify-between">
-                <span>{translations.footerFriSun}</span>
+                <span>{translations.footerSat}</span>
+                <span className="text-white font-semibold">By appointment</span>
+              </li>
+              <li className="flex justify-between">
+                <span>{translations.footerSun}</span>
                 <span className="text-white font-semibold">
                   {translations.footerClosedDays}
                 </span>
