@@ -198,6 +198,10 @@ export const LanguageProvider = ({ children }) => {
       bookingSubmitButton: "Изпрати заявка",
       bookingSuccessMessage: "Вашето запитване е изпратено!",
 
+      //Succes or Fail submit
+      formSubmitSuccess: "Съобщението е изпратено успешно!",
+      formSubmitFail: "Грешка при изпращане. Моля, опитайте отново.",
+
       // Footer section translations
       footerLogoTitle: "Дентална Практика",
       footerLogoSubtitle: "Д-р Парушев",
@@ -405,6 +409,10 @@ export const LanguageProvider = ({ children }) => {
         "Describe your problem and desired appointment date...",
       bookingSubmitButton: "Send Request",
       bookingSuccessMessage: "Your request has been sent!",
+
+      //Succes or Fail submit
+      formSubmitSuccess: "The message was sent successfully!",
+      formSubmitFail: "Error sending. Please try again.",
 
       // Footer section translations
       footerLogoTitle: "Dental Practice",
